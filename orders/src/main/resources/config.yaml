@@ -1,0 +1,11 @@
+kumuluzee:
+  opentracing:
+    service-name: Orders Microservice
+    selected-tracer: jaeger
+    available-tracers:
+      jaeger:
+        reporter_host: localhost
+        reporter_port: 5775
+    server:
+      operation-name-provider: class-method
+      skip-pattern: /openapi.*|/health.*
