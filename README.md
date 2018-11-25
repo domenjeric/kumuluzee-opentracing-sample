@@ -42,7 +42,7 @@ $ docker run -d -p 5775:5775/udp -p 16686:16686 jaegertracing/all-in-one:latest
 
 ## Usage
 
-The example uses docker to build and run the microservices.
+The example uses maven to build and run the microservices.
 
 1. Build the sample using maven:
 
