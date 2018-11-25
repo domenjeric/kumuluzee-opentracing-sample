@@ -25,7 +25,7 @@ In order to run this example you will need the following:
         ```
         
 3. Docker 1.13.0 (or newer):
-    * If you have installed Maven, you can check the version by typing the following in a command line:
+    * If you have installed Docker, you can check the version by typing the following in a command line:
     
         ```bash
         $ docker --version
