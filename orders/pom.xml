@@ -38,7 +38,7 @@
 
     <dependency>
       <groupId>com.kumuluz.ee.opentracing</groupId>
-      <artifactId>kumuluzee-opentracing</artifactId>
+      <artifactId>kumuluzee-opentracing-jaeger</artifactId>
       <version>${kumuluzee-opentracing.version}</version>
     </dependency>
   </dependencies>

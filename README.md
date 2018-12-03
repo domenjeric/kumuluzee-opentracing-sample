@@ -54,8 +54,8 @@ The example uses maven to build and run the microservices.
 2. Run each individual microservice separately (separate terminal):
     
     ```bash
-    $ PORT=3000 java -jar customers/target/opentracing-customers-1.0.0-SNAPSHOT.jar
-    $ PORT=3001 java -jar orders/target/opentracing-orders-1.0.0-SNAPSHOT.jar
+    $ java -jar customers/target/opentracing-customers-1.0.0-SNAPSHOT.jar
+    $ java -jar orders/target/opentracing-orders-1.0.0-SNAPSHOT.jar
     ```
     
 3. Navigate to <http://localhost:3000/v1/customers/1/orders>

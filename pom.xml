@@ -8,8 +8,23 @@
     </parent>
 
     <properties>
+        <kumuluzee.version>3.1.0-SNAPSHOT</kumuluzee.version>
         <kumuluzee-opentracing.version>1.0.0-SNAPSHOT</kumuluzee-opentracing.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>sonatype-snapshots</id>
+            <name>Sonatype Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
