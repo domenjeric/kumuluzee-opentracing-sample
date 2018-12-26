@@ -4,8 +4,15 @@ kumuluzee:
     http:
       port: 3001
   opentracing:
-    reporter_host: localhost
-    reporter_port: 5775
+    jaeger:
+      agent-host: localhost
+      agent-port: 5775
+    zipkin:
+      agent-host: http://localhost
+      agent-port: 9411
+
+mp:
+  opentracing:
     server:
       operation-name-provider: class-method
       skip-pattern: /openapi.*|/health.*

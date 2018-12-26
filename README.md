@@ -2,7 +2,6 @@
 
 > Simple example on how to use KumuluzEE OpenTracing extension.
 
-In this example we have 2 microservices (customers and orders). 
 Example demonstrates how to take advantage of distributed tracing 
 in KumuluzEE projects.
 
@@ -31,13 +30,38 @@ In order to run this example you will need the following:
         $ docker --version
         ```
 
+## Jaeger Tracing
 
-## Prerequisites
+### Prerequisites
 
 Make sure you have Jaeger tracing instance running.
 
 ```bash
 $ docker run -d -p 5775:5775/udp -p 16686:16686 jaegertracing/all-in-one:latest
+```
+
+
+## Zipkin tracing
+
+### Prerequisites
+
+Make sure you have Zipkin tracing instance running.
+
+```bash
+$ docker run -d -p 9411:9411 openzipkin/zipkin
+```
+
+By default Jaeger tracing is enabled in both sample microservices. 
+To enable Zipkin tracing all you need to do is change dependency in
+customers and orders module:
+
+```xml
+    <!--Replace kumuluzee-opentracing-jaeger with this dependency.-->
+    <dependency>
+      <groupId>com.kumuluz.ee.opentracing</groupId>
+      <artifactId>kumuluzee-opentracing-zipkin</artifactId> 
+      <version>${kumuluzee-opentracing.version}</version>
+    </dependency>
 ```
 
 ## Usage
@@ -47,7 +71,7 @@ The example uses maven to build and run the microservices.
 1. Build the sample using maven:
 
     ```bash
-    $ cd kumuluzee-opentracing-sample
+    $ cd kumuluzee-opentracing
     $ mvn clean package
     ```
     
@@ -60,4 +84,4 @@ The example uses maven to build and run the microservices.
     
 3. Navigate to <http://localhost:3000/v1/customers/1/orders>
 
-4. View traces in Jaeger console <http://localhost:16686>
+4. View traces in [Jaeger console](http://localhost:16686) or [Zipkin console](http://localhost:9411)
